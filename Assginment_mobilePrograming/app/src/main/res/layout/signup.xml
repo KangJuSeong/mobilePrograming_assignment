@@ -49,6 +49,7 @@
             android:weightSum="6">
 
             <EditText
+                android:id="@+id/new_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"/>
@@ -74,6 +75,7 @@
             android:layout_weight="5"
             android:gravity="center"/>
         <EditText
+            android:id="@+id/new_pw"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"/>
@@ -92,6 +94,7 @@
             android:layout_weight="5"
             android:gravity="center"/>
         <EditText
+            android:id="@+id/new_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"/>
@@ -110,6 +113,7 @@
             android:layout_weight="5"
             android:gravity="center"/>
         <EditText
+            android:id="@+id/new_adress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"/>
@@ -128,6 +132,7 @@
             android:layout_weight="5"
             android:gravity="center"/>
         <EditText
+            android:id="@+id/new_hp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"/>
@@ -164,7 +169,28 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="djfoawefjaweo;fijewasaflkjewalfjsa;fkdsajlkfjweio;fsakdjfia;wekfjsadlkf;ejwio"
+        android:text="이용약관"
         android:textSize="30sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
 
 </LinearLayout>

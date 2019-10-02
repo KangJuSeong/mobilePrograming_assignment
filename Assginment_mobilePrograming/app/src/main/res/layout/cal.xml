@@ -8,10 +8,10 @@
     android:paddingLeft="12dp"
     android:paddingRight="12dp"
     android:paddingTop="19dp"
-    android:rowCount="5">
+    android:rowCount="3">
 
     <TextView
-        android:id="@+id/sign_up_title"
+        android:id="@+id/cal_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CALCULATOR"
@@ -32,7 +32,8 @@
         android:layout_width="wrap_content"
         android:orientation="vertical"
         android:rowCount="4"
-        android:colCount="4">
+        android:columnCount="4"
+        android:layout_gravity="center">
         <Button
             android:text="1"/>
         <Button

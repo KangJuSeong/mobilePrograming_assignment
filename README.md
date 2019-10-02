@@ -21,7 +21,7 @@
    
    4 . 개인정보 사용 동의 간략 약관(TextView), 동의여부(RadioButton, Decline/Accept)
    
-   5 . 회원정보는 파일로 저장, 첫번째 페이지로 이동
+   5 . 회원정보는 txt파일로 저장, 첫번째 페이지로 이동
 
  - 세번째 화면(GridLayout)
  

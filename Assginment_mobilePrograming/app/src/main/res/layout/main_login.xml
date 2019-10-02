@@ -35,10 +35,10 @@
         android:layout_marginBottom="20dp"
         android:layout_below="@id/title_image">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email"
+            android:id="@+id/id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"/>
+            android:hint="ID"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -69,7 +69,6 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:src="@drawable/icon_people"
-            android:layout_left="@id/login"
             />
         <Button
             android:id="@+id/login"
@@ -95,6 +94,7 @@
         />
 
     <RelativeLayout
+        android:id="@+id/test"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/btn_darkblue"
@@ -107,7 +107,6 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:src="@drawable/icon_people"
-            android:layout_left="@id/sign_up"
             />
         <Button
             android:id="@+id/sign_up"
@@ -122,5 +121,12 @@
             />
 
     </RelativeLayout>
+    <TextView
+        android:id="@+id/testView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="30sp"
+        android:layout_below="@id/test"/>
 
 </RelativeLayout>
