@@ -56,32 +56,23 @@ public class MainActivity extends AppCompatActivity {
                     BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
                     String str = buffer.readLine(); // 파일에서 한줄을 읽어옴
                     while (str != null) {
-                        if(i.equals(str)){
-                            flag=flag+1;
-                        }
+                        if(i.equals(str)){ flag=flag+1; }
                         str = buffer.readLine();
                     }
                     buffer.close();
                 }
-                catch (Exception e) {
-                    e.printStackTrace();
-
-                }
+                catch (Exception e) { e.printStackTrace(); }
                 try {
                     FileInputStream fis = openFileInput("pw.txt");
                     BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
                     String str = buffer.readLine(); // 파일에서 한줄을 읽어옴
                     while (str != null) {
-                        if(p.equals(str)){
-                            flag=flag+1;
-                        }
+                        if(p.equals(str)){ flag=flag+1; }
                         str = buffer.readLine();
                     }
                     buffer.close();
                 }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
+                catch (Exception e) { e.printStackTrace(); }
                 if(flag==2){ startActivity(intent); }
                 else{ Toast.makeText(getApplicationContext(),"ID 또는 PW가 틀립니다.",Toast.LENGTH_LONG).show(); }
             }
