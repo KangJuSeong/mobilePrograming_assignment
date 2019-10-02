@@ -1,8 +1,10 @@
+# mobilePrograming_assignment
+
 20181569 소프트웨어학부 강주성
 
 모바일 프로그래밍 개인 과제
 
- - 첫번째 화면(Relative Layout) 
+ ## 첫번째 화면(Relative Layout) 
    
    1 . ID,비밀번호(TextView) 로그인,회원가입(Button)
    
@@ -11,7 +13,7 @@
    3 . ID,비밀번호 입력이 정상이고 로그인 버튼 클릭 시 세번째 페이지 이동
    
 
- - 두번째 화면(Linear Layout)
+ ## 두번째 화면(Linear Layout)
  
    1 . 회원가입 페이지, 첫번째 페이지에서 회원가입을 클릭 시 출력
    
@@ -23,7 +25,7 @@
    
    5 . 회원정보는 txt파일로 저장, 첫번째 페이지로 이동
 
- - 세번째 화면(GridLayout)
+ ## 세번째 화면(GridLayout)
  
    1 . 첫번째 페이지에서 ID,비밀번호 입력 시 정상이고 로그인 버튼 클릭 시 화면 출력
    
