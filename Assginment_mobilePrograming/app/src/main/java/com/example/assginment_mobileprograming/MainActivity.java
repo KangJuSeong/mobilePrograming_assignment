@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     Button signup;
     EditText id;
     EditText password;
-    TextView test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         signup = findViewById(R.id.sign_up);
         id = findViewById(R.id.id);
         password = findViewById(R.id.password);
-        test = findViewById(R.id.testView);
 
 
         signup.setOnClickListener(new View.OnClickListener() {

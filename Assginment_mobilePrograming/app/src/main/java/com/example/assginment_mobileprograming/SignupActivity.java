@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +25,13 @@ public class SignupActivity extends AppCompatActivity {
     Button cheak;
     EditText new_id;
     EditText new_pw;
+    EditText new_name;
+    EditText new_hp;
+    EditText new_adress;
+    RadioGroup radioGroup;
+    RadioButton accept,decline;
     int overlap = 0;
+    int accep = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,12 @@ public class SignupActivity extends AppCompatActivity {
         new_id=findViewById(R.id.new_id);
         new_pw=findViewById(R.id.new_pw);
         cheak=findViewById(R.id.cheak);
+        radioGroup=findViewById(R.id.radioGroup);
+        accept=findViewById(R.id.accept);
+        decline=findViewById(R.id.decline);
+        new_name=findViewById(R.id.new_name);
+        new_hp=findViewById(R.id.new_hp);
+        new_adress=findViewById(R.id.new_adress);
 
         cheak.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -50,9 +64,24 @@ public class SignupActivity extends AppCompatActivity {
                         overlap =1;
                         str = buffer.readLine();
                     }
+                    Toast.makeText(getApplicationContext(),"사용 가능한 ID입니다.",Toast.LENGTH_LONG).show();
                     buffer.close();
                 }
                 catch (Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.accept:
+                        accep=1;
+                        break;
+                    case R.id.decline:
+                        accep=0;
+                        break;
+                }
             }
         });
 
@@ -61,23 +90,34 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String id = new_id.getText().toString();
                 String pw = new_pw.getText().toString();
+                String name = new_name.getText().toString();
+                String hp = new_hp.getText().toString();
+                String adress = new_adress.getText().toString();
 
-                if(overlap == 1){
-                    try {
-                        FileOutputStream fos = openFileOutput("id.txt",Context.MODE_APPEND);
-                        FileOutputStream fos1 = openFileOutput("pw.txt",Context.MODE_APPEND);
-                        PrintWriter out = new PrintWriter(fos);
-                        PrintWriter out1 = new PrintWriter(fos1);
-                        out.println(id);
-                        out1.println(pw);
-                        out.close();
-                        out1.close();
-                        Intent intent = new Intent(SignupActivity.this,MainActivity.class);
-                        startActivity(intent);
-                    }
-                    catch (Exception e) { e.printStackTrace(); }
+                if(id.equals("") || pw.equals("") || name.equals("") || hp.equals("") || adress.equals("")){
+                    Toast.makeText(getApplicationContext(), "모든 정보를 입력해주세요.", Toast.LENGTH_LONG).show();
                 }
-                else {Toast.makeText(getApplicationContext(),"중복체크를 해주세요",Toast.LENGTH_LONG).show();}
+                else {
+                    if (accep == 1) {
+                        if (overlap == 1) {
+                            try {
+                                FileOutputStream fos = openFileOutput("id.txt", Context.MODE_APPEND);
+                                FileOutputStream fos1 = openFileOutput("pw.txt", Context.MODE_APPEND);
+                                PrintWriter out = new PrintWriter(fos);
+                                PrintWriter out1 = new PrintWriter(fos1);
+                                out.println(id);
+                                out1.println(pw);
+                                out.close();
+                                out1.close();
+                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        } else { Toast.makeText(getApplicationContext(), "중복체크를 해주세요.", Toast.LENGTH_LONG).show();}
+                    }
+                    else { Toast.makeText(getApplicationContext(), "약관에 동의해주세요.", Toast.LENGTH_LONG).show(); }
+                }
             }
         });
     }

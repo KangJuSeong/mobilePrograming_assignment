@@ -147,11 +147,13 @@
         android:layout_marginTop="20sp"
         />
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2">
         <RadioButton
+            android:id="@+id/accept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -160,6 +162,7 @@
             android:gravity="center"
             />
         <RadioButton
+            android:id="@+id/decline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

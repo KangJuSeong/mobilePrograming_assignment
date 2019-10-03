@@ -121,12 +121,4 @@
             />
 
     </RelativeLayout>
-    <TextView
-        android:id="@+id/testView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="30sp"
-        android:layout_below="@id/test"/>
-
 </RelativeLayout>
