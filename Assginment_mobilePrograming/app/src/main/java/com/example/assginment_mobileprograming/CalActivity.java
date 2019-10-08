@@ -23,9 +23,11 @@ public class CalActivity extends AppCompatActivity {
     double d1,d2,d3;
     String number1,number2;
     int operator=0;
+    int flag=0;
 
 
     public void onClick (View v){
+        if(flag==1){show.setText("");}
         switch(v.getId()){
             case R.id.num0 : show.setText(show.getText()+"0"); break;
             case R.id.num1 : show.setText(show.getText()+"1"); break;
@@ -38,6 +40,7 @@ public class CalActivity extends AppCompatActivity {
             case R.id.num8 : show.setText(show.getText()+"8"); break;
             case R.id.num9 : show.setText(show.getText()+"9"); break;
         }
+        flag=0;
     };
 
     Button.OnClickListener mListener = new Button.OnClickListener(){
@@ -49,22 +52,22 @@ public class CalActivity extends AppCompatActivity {
                 case R.id.plus:
                     number1=show.getText().toString();
                     operator=PLUS;
-                    show.setText("");
+                    flag=1;
                     break;
                 case R.id.minus:
                     number1=show.getText().toString();
                     operator=MINUS;
-                    show.setText("");
+                    flag=1;
                     break;
                 case R.id.div:
                     number1=show.getText().toString();
                     operator=DIV;
-                    show.setText("");
+                    flag=1;
                     break;
                 case R.id.mult:
                     number1=show.getText().toString();
                     operator=MULT;
-                    show.setText("");
+                    flag=1;
                     break;
                 case R.id.result:
                     number2=show.getText().toString();
@@ -93,6 +96,7 @@ public class CalActivity extends AppCompatActivity {
                     number1="";
                     number2="";
                     operator=0;
+                    flag=0;
                     show.setText("");
                     break;
             }

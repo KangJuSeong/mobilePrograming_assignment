@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, CalActivity.class);
 
                 try {
-                    FileInputStream fis = openFileInput("id.txt");
+                    FileInputStream fis = openFileInput("ID.txt");
                     BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
                     String str = buffer.readLine(); // 파일에서 한줄을 읽어옴
                     while (str != null) {
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 catch (Exception e) { e.printStackTrace(); }
                 try {
-                    FileInputStream fis = openFileInput("pw.txt");
+                    FileInputStream fis = openFileInput("PW.txt");
                     BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
                     String str = buffer.readLine(); // 파일에서 한줄을 읽어옴
                     while (str != null) {

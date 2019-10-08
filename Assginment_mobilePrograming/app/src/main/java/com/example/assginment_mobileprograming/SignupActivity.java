@@ -53,12 +53,14 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String current_id = new_id.getText().toString();
                 try {
-                    FileInputStream fis = openFileInput("id.txt");
+                    FileInputStream fis = openFileInput("ID.txt");
                     BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
                     String str = buffer.readLine(); // 파일에서 한줄을 읽어옴
+                    overlap=2;
                     while (str != null) {
                         if(current_id.equals(str)){
                             Toast.makeText(getApplicationContext(),"중복된 ID가 존재합니다.",Toast.LENGTH_LONG).show();
+                            overlap=0;
                             break;
                         }
                         overlap =1;
@@ -99,16 +101,28 @@ public class SignupActivity extends AppCompatActivity {
                 }
                 else {
                     if (accep == 1) {
-                        if (overlap == 1) {
+                        if (overlap == 1 || overlap == 2) {
                             try {
-                                FileOutputStream fos = openFileOutput("id.txt", Context.MODE_APPEND);
-                                FileOutputStream fos1 = openFileOutput("pw.txt", Context.MODE_APPEND);
+                                FileOutputStream fos = openFileOutput("ID.txt", Context.MODE_APPEND);
+                                FileOutputStream fos1 = openFileOutput("PW.txt", Context.MODE_APPEND);
+                                FileOutputStream fos2 = openFileOutput("name.txt", Context.MODE_APPEND);
+                                FileOutputStream fos3 = openFileOutput("hp.txt", Context.MODE_APPEND);
+                                FileOutputStream fos4 = openFileOutput("adress.txt", Context.MODE_APPEND);
                                 PrintWriter out = new PrintWriter(fos);
                                 PrintWriter out1 = new PrintWriter(fos1);
+                                PrintWriter out2 = new PrintWriter(fos2);
+                                PrintWriter out3 = new PrintWriter(fos3);
+                                PrintWriter out4 = new PrintWriter(fos4);
                                 out.println(id);
                                 out1.println(pw);
+                                out2.println(name);
+                                out3.println(hp);
+                                out4.println(adress);
                                 out.close();
                                 out1.close();
+                                out2.close();
+                                out3.close();
+                                out4.close();
                                 Intent intent = new Intent(SignupActivity.this, MainActivity.class);
                                 startActivity(intent);
                             } catch (Exception e) {
